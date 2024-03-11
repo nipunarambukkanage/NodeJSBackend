@@ -10,13 +10,36 @@ app.use(express.json());
 
 //Routes
 
-app.get( '/who_are_you',  (req, res) => {
-    res.send('Hello world! I am Node.js. How are you! ');
+const user = {
+    name : 'Tharindu Nanayakkara',
+    school : 'Central College, Colombo',
+    dob : 'January 3rd, 2009',
+    email : 'tharindu@gmail.com',
+    description : 'I am a programming enthusiast!',
+    hobby : '',
+    hometown : '',
+    age : '',
+    phone : '0112222222',
+    ambition : ''
+};
+
+app.get( '/get_user',  (req, res) => {
+    res.send(user);
 }
 );
 
-app.get( '/what_is_your_name',  (req, res) => {
-    res.send('Hello client. My name is John.');
+const school = {
+    name : 'Ananda College',
+    website : 'www.anandacollege.com',
+    email : 'anandacoolege@gmail.com',
+    description : 'My school is situated at Colombo.',
+    phone : '0112222222',
+    mySchoolAddress : 'Colombo 10',
+    since : '1818',
+};
+
+app.get( '/get_school_details',  (req, res) => {
+    res.send(school);
 }
 );
 
