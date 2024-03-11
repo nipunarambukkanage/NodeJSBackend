@@ -1,10 +1,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
+const cors = require('cors');
 
 const app = express();
 
 //MongoDB should be connected here
+
+app.use(cors({
+    origin : 'http://localhost:3000'
+}));
 
 app.use(express.json());
 
