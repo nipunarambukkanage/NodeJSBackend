@@ -11,7 +11,7 @@ app.use(express.json());
 //Routes
 
 const user = {
-    name : 'Tharindu Nanayakkara',
+    name : 'Batman (Backend Test Name)',
     school : 'Central College, Colombo',
     dob : 'January 3rd, 2009',
     email : 'tharindu@gmail.com',
