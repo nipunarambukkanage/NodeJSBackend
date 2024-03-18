@@ -15,6 +15,21 @@ app.use(express.json());
 
 //Routes
 
+const createData = (name, category, date) => {
+    return { name, category, date };
+}
+
+const achievementData = [
+    createData("1st Place in Running Event", "Athletics", "2023-04-20"),
+    createData("2nd Place in Singing Contest", "Singing", "2021-02-19"),
+    createData("3rd Place in Music Event", "Music", "2023-11-23"),
+    createData("Passed Term Test", "School", "2023-01-10"),
+    createData("Passed IT Course", "Software Development", "2023-11-13"),
+    createData("2nd Place in Running Event", "Athletics", "2023-03-13"),
+    createData("Went to NASA", "Astronomy", "2023-08-13"),
+    createData("Went to Ferrari Company", "Automobile", "2024-08-13"),
+];
+
 const user = {
     name : 'Batman (Backend Test Name)',
     school : 'Central College, Colombo',
@@ -60,6 +75,12 @@ app.get( '/what_is_your_age',  (req, res) => {
 
 app.get( '/what_is_your_favourite_food',  (req, res) => {
     res.send('My favourite food is Pizza');
+}
+);
+
+
+app.get( '/get_achievements',  (req, res) => {
+    res.send(achievementData);
 }
 );
 
