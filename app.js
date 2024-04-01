@@ -55,6 +55,12 @@ const villageInfo = {
     map : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63383.18112512491!2d79.83774567915762!3d6.836669472582263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25a8d6ec1f8c3%3A0x47810f3e7d084753!2sDehiwala-Mount%20Lavinia!5e0!3m2!1sen!2slk!4v1704726674169!5m2!1sen!2slk"
 }
 
+const schoolImages = [
+    "https://freepngclipart.com/download/building/74392-building-school-cartoon-free-transparent-image-hq.png",
+    "https://s.tmimgcdn.com/scr/1204x1146/144100/school-education-building-illustration_144126-original.jpg",
+    "https://static.vecteezy.com/system/resources/previews/000/669/078/original/a-school-building-background.jpg"
+];
+
 app.get( '/get_user',  (req, res) => {
     res.send(user);
 }
@@ -62,6 +68,11 @@ app.get( '/get_user',  (req, res) => {
 
 app.get( '/get_village_data',  (req, res) => {
     res.send(villageInfo);
+}
+);
+
+app.get( '/get_school_data',  (req, res) => {
+    res.send(schoolImages);
 }
 );
 
