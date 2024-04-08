@@ -91,6 +91,30 @@ app.get( '/get_school_details',  (req, res) => {
 }
 );
 
+const aboutMeData = [
+    {
+        name : "Sandun Nawarathna",
+        expertise : "Hobbies : HTML, C#, Processing, React",
+        description : "Hi my name is Sandun Nawarathna. I am a Software Developer.",
+    },
+    {
+        name : "Sahan Sulakshana Silva",
+        expertise : "Expertise : HTML, C#, Processing, React",
+        description : "Hi my name is Sahan Sulakshana Silva. I am a Software Developer.",
+    },
+    {
+        name : "Rusira Samarasekara",
+        expertise : "Expertise : HTML, C#, Processing, React",
+        description : "Hi my name is Rusira Samarasekara. I am a Software Developer. ",
+    },
+
+];
+
+app.get( '/get_about_me',  (req, res) => {
+    res.send(aboutMeData);
+}
+);
+
 app.get( '/what_is_your_school',  (req, res) => {
     res.send('My School is Ananda College');
 }
