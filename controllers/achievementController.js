@@ -3,7 +3,7 @@ const Achievement = require('../models/achievements');
 
 async function getAllAchievements(req, res){
     try{
-        const achievements = await Job.find();
+        const achievements = await Achievement.find();
         res.json(achievements);
     }catch(err){
         console.error(err);
@@ -14,9 +14,9 @@ async function getAllAchievements(req, res){
 async function getAchievementById(req, res){
     const jobId = req.params?.id;
     try{
-        const achievement = await Job.findById(jobId);
+        const achievement = await Achievement.findById(jobId);
         if(!achievement){
-            res.status(404).json({error : 'Job not found'});
+            res.status(404).json({error : 'Achievement not found'});
         }
         res.json(achievement);
     }catch(err){
