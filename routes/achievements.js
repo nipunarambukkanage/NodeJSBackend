@@ -7,12 +7,12 @@ router.get('/', achievementController.getAllAchievements);
 router.get('/:id', achievementController.getAchievementById);
 
 //POST
-router.get('/', achievementController.createAchievement);
+router.post('/', achievementController.createAchievement);
 
-// //PUT
-router.get('/:id', achievementController.updateAchievement);
+//PUT
+router.put('/:id', achievementController.updateAchievement);
 
-// //DELETE
-router.get('/:id', achievementController.deleteAchievement);
+//DELETE
+router.delete('/:id', achievementController.deleteAchievement);
 
 module.exports = router;

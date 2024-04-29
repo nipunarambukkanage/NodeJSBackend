@@ -49,7 +49,7 @@ async function updateAchievement(req, res) {
         new: true,
       });
       if (!updatedJob) {
-        return res.status(404).json({ error: 'Job not found' });
+        return res.status(404).json({ error: 'Achievement not found' });
       }
       res.json(updatedJob);
     } catch (err) {
@@ -63,9 +63,9 @@ async function updateAchievement(req, res) {
     try {
       const deletedJob = await Achievement.findByIdAndDelete(jobId);
       if (!deletedJob) {
-        return res.status(404).json({ error: 'Job not found' });
+        return res.status(404).json({ error: 'Achievement not found' });
       }
-      res.json({ message: 'Job deleted successfully' });
+      res.json({ message: 'Achievement deleted successfully' });
     } catch (err) {
       console.error(err);
       res.status(500).json({ error: 'Server error' });
