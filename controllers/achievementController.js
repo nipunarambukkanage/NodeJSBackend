@@ -41,8 +41,41 @@ async function createAchievement(req, res){
     }
 }
 
+async function updateAchievement(req, res) {
+    const jobId = req.params.id;
+    const updateData = req.body;
+    try {
+      const updatedJob = await Achievement.findByIdAndUpdate(jobId, updateData, {
+        new: true,
+      });
+      if (!updatedJob) {
+        return res.status(404).json({ error: 'Job not found' });
+      }
+      res.json(updatedJob);
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: 'Server error' });
+    }
+  }
+  
+  async function deleteAchievement(req, res) {
+    const jobId = req.params.id;
+    try {
+      const deletedJob = await Achievement.findByIdAndDelete(jobId);
+      if (!deletedJob) {
+        return res.status(404).json({ error: 'Job not found' });
+      }
+      res.json({ message: 'Job deleted successfully' });
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: 'Server error' });
+    }
+  }
+
 module.exports = {
     getAchievementById,
     getAllAchievements,
-    createAchievement
+    createAchievement,
+    deleteAchievement,
+    updateAchievement
 }

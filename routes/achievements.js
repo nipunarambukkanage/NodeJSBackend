@@ -10,9 +10,9 @@ router.get('/:id', achievementController.getAchievementById);
 router.get('/', achievementController.createAchievement);
 
 // //PUT
-// router.get('/:id', achievementController.updateAchievement);
+router.get('/:id', achievementController.updateAchievement);
 
 // //DELETE
-// router.get('/:id', achievementController.deleteAchievement);
+router.get('/:id', achievementController.deleteAchievement);
 
 module.exports = router;
