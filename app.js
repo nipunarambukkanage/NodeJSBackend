@@ -19,15 +19,6 @@ app.use(express.json());
 
 app.use('/achievement/', achievementRoutes)
 
-
-
-
-
-
-
-
-
-
 // OLD ROUTES
 
 // const createData = (name, category, date) => {
