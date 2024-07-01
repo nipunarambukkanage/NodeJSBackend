@@ -4,6 +4,7 @@ require('dotenv').config();
 const cors = require('cors');
 const connectDB = require('./config/db');
 const achievementRoutes = require('./routes/achievements');
+const villageRoutes = require('./routes/villages');
 
 const app = express();
 
@@ -18,6 +19,8 @@ app.use(express.json());
 //Routes
 
 app.use('/achievement/', achievementRoutes)
+app.use('/villages', villageRoutes);
+
 
 // OLD ROUTES
 
